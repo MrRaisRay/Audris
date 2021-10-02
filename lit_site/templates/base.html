@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+		<title>{% block title %}Название компании{% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href={% static 'assets/css/main.css' %} />
+		<noscript><link rel="stylesheet" href={% static 'assets/css/noscript.css' %} /></noscript>
+	</head>
+	<body class="is-preload">
+		
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Логотип компании</a></h1>
+						<nav>
+							<a href="#menu">Меню</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Меню</h2>
+							<ul class="links">
+								<li><a href={% url 'admining:index' %}>Главная</a></li>
+								<li><a href="{% url 'admining:index' %}#aboutus">О компании</a></li>
+								<li><a href= {% url 'admining:vacancy' %}>Вакансии</a></li>
+								<li><a href="{% url 'admining:index' %}#contact">Контакты</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+                {% block content %}{% endblock content %}
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Свяжитесь с нами</h2>
+							<p>Задайте интересующие вас вопросы об актуальных вакансиях:</p>
+							<form method="post" action="{% url 'admining:leave_appeal' %}">
+								{% csrf_token %}
+								<div class="fields">
+									<div class="field">
+										<label for="name">Имя</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Сообщение</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Отправить сообщение"/></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Беларусь<br />
+									пр.Независимости, 33<br />
+									Минск
+								</li>
+								<li class="icon solid fa-phone"><a href="tel:00000000000">(000) 000-0000</a></li>
+								<li class="icon solid fa-envelope"><a href="mailto:information@mail.ru">information@mail.ru</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src={% static 'assets/js/jquery.min.js' %}></script>
+			<script src={% static 'assets/js/jquery.scrollex.min.js' %}></script>
+			<script src={% static 'assets/js/browser.min.js' %}></script>
+			<script src={% static 'assets/js/breakpoints.min.js' %}></script>
+			<script src={% static 'assets/js/util.js' %}></script>
+			<script src={% static 'assets/js/main.js' %}></script>
+
+	</body>
+</html>

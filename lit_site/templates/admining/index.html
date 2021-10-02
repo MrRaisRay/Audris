@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"></div>
+							<h2>Название компании</h2>
+							<p>Приветственный текст с краткой информацией</p>
+						</div>
+					</section>
+					<a name="aboutus"></a>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- About us -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<div class="content">
+										<h2 class="major">О нас</h2>
+										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+									</div>
+								</div>
+							</section>
+
+						<!-- Gallery -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Галерея</h2>s
+									<section class="features">
+									{% if gallery %}
+										{% for elem in gallery %}
+										<article>
+											<div class="image"><img src="/{{elem.picture_file}}" alt="" /></div>
+										</article>
+										{% endfor %}
+									{% else %}
+										<article>
+											<div class="image">Изображения отсутсвуют</div>
+										</article>
+									{% endif %}
+									</section>
+								</div>
+							</section>
+
+					</section>
+					<a name="contact"></a>
+{% endblock content %}
