@@ -16,7 +16,7 @@ class Vacancy(models.Model):
         verbose_name_plural = "Вакансии"
 
 class Picture(models.Model):
-    picture_file = models.ImageField("имя картинки", upload_to='static/images')
+    picture_file = models.ImageField("имя картинки", upload_to='lit_site/static/images')
 
     class Meta:
         verbose_name = "Картинка"
