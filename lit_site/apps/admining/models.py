@@ -10,6 +10,7 @@ class About(models.Model):
 
 class Vacancy(models.Model):
     vacancy_title = models.CharField("название вакансии", max_length= 200)
+    vacancy_text = models.TextField("текст вакансии", default="some text")
 
     class Meta:
         verbose_name = "Вакансия"

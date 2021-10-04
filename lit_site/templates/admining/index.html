@@ -4,8 +4,8 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"></div>
-							<h2>Название компании</h2>
-							<p>Приветственный текст с краткой информацией</p>
+							<h2>UAB "Primeconsultants investicijos"</h2>
+							<p></p>
 						</div>
 					</section>
 					<a name="aboutus"></a>
@@ -18,8 +18,9 @@
 								<div class="inner">
 									<div class="content">
 										<h2 class="major">О нас</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										{% for elem in about %}
+										<p>{{ elem.about_text }}</p>
+										{% endfor %}
 									</div>
 								</div>
 							</section>

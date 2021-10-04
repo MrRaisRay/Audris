@@ -10,7 +10,8 @@ def index(request):
     return render(request, "admining/index.html", {'about': about, 'gallery': gallery_list})
 
 def vacancy(request):
-    return render(request, "admining/elements.html")
+    vacancy_list = Vacancy.objects.all()
+    return render(request, "admining/elements.html", {"vacancy":vacancy_list})
 
 def leave_appeal(request):
     a= Appeal.objects.all()

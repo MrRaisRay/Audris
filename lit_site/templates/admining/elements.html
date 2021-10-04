@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Работа в ...{% endblock title %}
+{% block title %}Работа у нас{% endblock title %}
 
 {% block content %}
 				<!-- Wrapper -->
@@ -22,52 +22,11 @@
 										<h2 class="major">Открытые вакансии</h2>
 										<section class="vacancy">
 											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
+												{% for elem in vacancy %}
 												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+												<p>{{ elem.vacancy_text }}</p>
 												<a href="#contact" class="special">Подать заявку</a>
-											</article>
-											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
-												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-												<a href="#contact" class="special">Подать заявку</a>
-											</article>
-											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
-												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-												<a href="#contact" class="special">Подать заявку</a>
-											</article>
-											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
-												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-												<a href="#contact" class="special">Подать заявку</a>
-											</article>
-											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
-												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-												<a href="#contact" class="special">Подать заявку</a>
-											</article>
-											<article>
-												<div class="image-1">
-													<img src="images/pic04.jpg" alt="" />
-												</div>
-												<h3 class="major">Должность</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-												<a href="#contact" class="special">Подать заявку</a>
+												{% endfor %}
 											</article>
 										</section>
 									</div>
