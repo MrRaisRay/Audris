@@ -28,7 +28,7 @@
 							<ul class="links">
 								<li><a href={% url 'admining:index' %}>Главная</a></li>
 								<li><a href="{% url 'admining:index' %}#aboutus">О компании</a></li>
-								<li><a href= {% url 'admining:vacancy' %}>Вакансии</a></li>
+								<li><a href="{% url 'admining:index' %}#vacancy">Вакансии</a></li>
 								<li><a href="{% url 'admining:index' %}#contact">Контакты</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
@@ -36,7 +36,27 @@
 					</nav>
 
                 {% block content %}{% endblock content %}
+				<!-- Gallery -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Галерея</h2>s
+									<section class="features">
+									{% if gallery %}
+										{% for elem in gallery %}
+										<article>
+											<div class="image"><img src={{elem.picture_file}}  alt="" /></div>
+										</article>
+										{% endfor %}
+									{% else %}
+										<article>
+											<div class="image">Изображения отсутсвуют</div>
+										</article>
+									{% endif %}
+									</section>
+								</div>
+							</section>
 
+				<a name="contact"></a>
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
@@ -65,8 +85,8 @@
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									Республика Литва <br />
-									ул.Латвю 7<br />
-									08123 Вильнус
+									ул. Латвю 7-2<br />
+									08123 Вильнюс
 								</li>
 								<li class="icon solid fa-phone"><a href="tel:00000000000">+370(655)71 234</a></li>
 								<li class="icon solid fa-envelope"><a href="mailto:info@primeinvest.lt">info@primeco.lt</a></li>

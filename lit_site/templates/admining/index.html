@@ -25,26 +25,26 @@
 								</div>
 							</section>
 
-						<!-- Gallery -->
-							<section id="four" class="wrapper alt style1">
+					</section>
+					<a name="vacancy"></a>
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- Vacancies -->
+							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<h2 class="major">Галерея</h2>s
-									<section class="features">
-									{% if gallery %}
-										{% for elem in gallery %}
-										<article>
-											<div class="image"><img src="{{elem.picture_file}}"  alt="" /></div>
-										</article>
-										{% endfor %}
-									{% else %}
-										<article>
-											<div class="image">Изображения отсутсвуют</div>
-										</article>
-									{% endif %}
-									</section>
+									<div class="content">
+										<h2 class="major">Открытые вакансии</h2>
+										<section class="vacancy">
+											<article>
+												{% for elem in vacancy %}
+												<h3 class="major">Должность</h3>
+												<p>{{ elem.vacancy_text }}</p>
+												<a href="#contact" class="special">Подать заявку</a>
+												{% endfor %}
+											</article>
+										</section>
+									</div>
 								</div>
 							</section>
-
-					</section>
-					<a name="contact"></a>
 {% endblock content %}

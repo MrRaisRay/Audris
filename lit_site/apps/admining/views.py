@@ -7,11 +7,8 @@ from .models import Appeal, About, Picture, Vacancy
 def index(request):
     about = About.objects.all()
     gallery_list = Picture.objects.all()
-    return render(request, "admining/index.html", {'about': about, 'gallery': gallery_list})
-
-def vacancy(request):
     vacancy_list = Vacancy.objects.all()
-    return render(request, "admining/elements.html", {"vacancy":vacancy_list})
+    return render(request, "admining/index.html", {'about': about, 'gallery': gallery_list, "vacancy":vacancy_list})
 
 def leave_appeal(request):
     a= Appeal.objects.all()
